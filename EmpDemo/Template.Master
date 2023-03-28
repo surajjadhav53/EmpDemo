@@ -1,0 +1,122 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Template.master.cs" Inherits="EmpDemo.Template" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="CSS/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <img src="Images/logo.png" width="200px" />
+            </div>
+            <div class="col-9 text-center">
+                <b class="fw-bold position-absolute mt-2 fs-1 text-danger">First Master Page</b>
+            </div>
+
+        </div>
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="Home.aspx">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Login.aspx">Login</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <%
+                                if (Session["UID"]!=null)
+                                {
+                             %>
+                                    <li class="nav-item">
+                                    <a class="nav-link" href="Logout.aspx" tabindex="-1">Logout</a>
+                                    </li>
+                             <%   }
+
+                              %>
+                             <li class="nav-item">
+                                    Total active users:<%Response.Write(Application["Count"]);    %>
+                                    </li>
+                            
+                            
+                        </ul>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    
+    <div class="row">
+        <div class="col-4">
+            <img src="Images/admiration-g477e4ce7f_1920.jpg" class="image-thumbnail" width="300px" />
+            <img src="Images/cog-wheels-gdf2eee014_1920.jpg" class="image-thumbnail" width="300px" />
+            <img src="Images/www-g47c2cff34_1920.png" class="image-thumbnail" width="300px" />
+            <img src="Images/youtube-gf59656714_1920.jpg" class="image-thumbnail" width="300px" />
+        </div>
+        <div class="col-4">
+            <form id="form1" runat="server">
+                <div>
+                    <asp:ContentPlaceHolder runat="server" ID="PageBody"></asp:ContentPlaceHolder>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="row" style="background: blue;">
+        <div class="col-4">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+                <li>Home</li>
+            </ul>
+            
+        </div>
+         <div class="col-4">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+                <li>Home</li>
+            </ul>
+            
+        </div>
+         <div class="col-4">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+                <li>Home</li>
+            </ul>
+            
+        </div>
+       
+
+    </div>
+</div>
+</body>
+</html>
